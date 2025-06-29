@@ -144,6 +144,21 @@ body {
   margin-inline: auto;
 }
 
+/**************************/
+/* DECO IMG  */
+/**************************/
+
+.deco{
+  padding: 3.2rem 0;
+}
+
+.deco-img{
+  display: block;
+  width:100%;
+  max-width: 30rem;
+
+}
+
 /* -------------------------------------------------- */
 /* 08  FOOTER                                         */
 /* -------------------------------------------------- */
@@ -283,6 +298,11 @@ body {
   }
   .location-iframe {
     height: 24rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .small-banner{
+    margin-bottom: 1.6rem;
   }
 
   .logo-txt {
@@ -291,6 +311,16 @@ body {
   .address-txt {
     font-size: 1.6rem;
   }
+  .deco{
+  padding: 3.2rem 0;
+}
+
+.deco-img{
+  display: block;
+  width:100%;
+  max-width: 18rem;
+
+}
 }
 
 /* === 4) ≤360px (Very Small Mobile) === */
