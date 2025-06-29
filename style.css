@@ -115,13 +115,13 @@ body {
 /* 06  BANNER                                         */
 /* -------------------------------------------------- */
 
-.banner {
-  width: 100%;
+.small-banner .banner.container {
+  padding-inline: 3.2rem; /* نفس padding المحتوى */
   max-width: 120rem;
-  height: 23rem;
   margin: 0 auto 8.4rem;
   border-radius: 20px;
   background: url("/img/banner two.png") center/cover no-repeat;
+  box-sizing: border-box;
 }
 
 /* -------------------------------------------------- */
@@ -246,6 +246,7 @@ body {
     font-size: 50%;
   }
 
+
   .hero-banner {
     height: 16rem;
     border-radius: 10px;
@@ -266,6 +267,18 @@ body {
     border: 0;
     padding: 1.6rem;
   }
+
+   .section-program ,.small-banner{
+    padding-inline: 3.2rem;
+  }
+  .small-banner{
+    margin-bottom: 1.2rem !important;
+  }
+
+  .banner{
+    border-radius: 12px !important;
+  }
+
 
   .program {
     width: 100%;
@@ -321,21 +334,12 @@ body {
     overflow-x: hidden;
   }
 
-  .container {
-    padding-inline: 0 !important;
-  }
-
   .Zyarah-title,
   .zyarah-desc {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  /* ✅ الفراغ الجانبي لجميع الأقسام ما عدا الهيرو والفوتر */
-  body > *:not(.section-hero):not(.footer) {
-    padding-inline: 1.6rem;
   }
 }
 
@@ -358,10 +362,6 @@ body {
     font-size: 1.4rem;
   }
 
-  /* ✅ فراغ جانبي أقل قليلًا لشاشات أصغر */
-  body > *:not(.section-hero):not(.footer) {
-    padding-inline: 1.2rem;
-  }
 }
 
 /* =========================== */
@@ -369,7 +369,9 @@ body {
 /* =========================== */
 
 .section-hero {
-  padding: 4.8rem 0 9.6rem;
+  padding-top: 4.8rem;
+  padding-bottom: 9.6rem;
+  padding-inline: 0; /* ازالة البادنج الجانبي بالكامل */
   background-color: #fffff0;
   background-size: cover;
   background-position: center;
@@ -383,7 +385,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9.6rem;
-  padding: 0 3.2rem;
+  padding-inline: 3.2rem; /* بادنج داخلي من الهيرو */
   align-items: center;
 }
 
@@ -435,7 +437,7 @@ body {
   .hero {
     grid-template-columns: 1fr;
     gap: 4.8rem;
-    padding: 0 1.6rem;
+    padding-inline: 1.6rem;
   }
 
   .hero-txt {
@@ -457,9 +459,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  
   .section-hero {
-    padding: 3.2rem 0 6.4rem;
-    margin-bottom: 3.2rem;
+   
+    padding-inline: 0 !important;
+    padding: 0  ;
+    margin: 0;
+     padding-top: 3.2rem;
+    padding-bottom: 6.4rem;
+    margin-bottom: 2.4rem;
   }
 
   .hero img {
@@ -474,20 +482,25 @@ body {
     font-size: 3.2rem;
     margin-bottom: 2.4rem;
     line-height: 1.5;
-    padding: 0 3.6rem;
+    padding-inline: 3.6rem;
   }
 
   .zyarah-desc {
     font-size: 1.8rem;
     line-height: 1.5;
     margin-bottom: 5rem;
-    padding: 0 3rem;
+    padding-inline: 3rem;
   }
 
   .btn-cta {
     padding: 2rem 3.2rem;
     font-size: 2.4rem;
   }
+  .small-banner{
+    border-radius: 2px;
+  }
+
+
 }
 
 @media (max-width: 360px) {
