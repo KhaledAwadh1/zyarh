@@ -8,8 +8,6 @@
   box-sizing: border-box;
 }
 
-
-
 html {
   font-size: 62.5%; /* 10px */
 }
@@ -36,7 +34,7 @@ body {
   display: block;
   width: 100%;
   max-width: 120rem;
-  margin:0 auto;
+  margin: 0 auto;
   padding: 3.2rem;
 }
 
@@ -47,7 +45,6 @@ body {
   margin-bottom: 4.8rem;
 }
 
-/* Grid بثلاثة أعمدة يتكيّف أوتوماتيكياً */
 .grid-3-cl {
   display: grid;
   gap: 3.2rem;
@@ -78,7 +75,7 @@ body {
 .program-title {
   text-align: center;
   font-size: 2.8rem;
-  background-color:#9ba684;
+  background-color: #9ba684;
   color: #fff;
   padding: 1.6rem;
   border-radius: 10px;
@@ -145,15 +142,14 @@ body {
 /* DECO IMG  */
 /**************************/
 
-.deco{
+.deco {
   padding: 3.2rem 0;
 }
 
-.deco-img{
+.deco-img {
   display: block;
-  width:100%;
+  width: 100%;
   max-width: 30rem;
-
 }
 
 /* -------------------------------------------------- */
@@ -163,9 +159,8 @@ body {
 .footer {
   background-color: #1a2c11;
   padding: 4.8rem 0 1.6rem;
-  /* تمديد الخلفية لكامل العرض بإلغاء حشوة body */
   margin-inline: calc(-1 * var(--side-pad));
-  padding-inline: var(--side-pad); /* استعادة حشوة داخلية للمحتوى */
+  padding-inline: var(--side-pad);
 }
 
 .footer-content {
@@ -180,6 +175,7 @@ body {
   max-width: 30rem;
   margin-bottom: 2rem;
 }
+
 .social-icons {
   display: flex;
   gap: 1.6rem;
@@ -197,10 +193,12 @@ body {
   align-items: center;
   margin-bottom: 4.8rem;
 }
+
 .address-txt {
   font-size: 2rem;
   color: #fff;
 }
+
 .copy-right {
   font-size: 1.4rem;
   color: #fff;
@@ -211,24 +209,22 @@ body {
 /* 09  RESPONSIVE MEDIA QUERIES                       */
 /* -------------------------------------------------- */
 
-/* === 1) ≤1024px (Laptop/Tablet Large) === */
 @media (max-width: 1024px) {
   html {
     font-size: 56.25%;
-  } /* 9px */
+  }
   :root {
     --side-pad: 5vw;
-  } /* تحديث الفراغ الجانبي */
+  }
   .section-program {
     gap: 2.4rem;
   }
 }
 
-/* === 2) ≤768px (Tablet) === */
 @media (max-width: 768px) {
   html {
     font-size: 53%;
-  } /* ≈8.5px */
+  }
   :root {
     --side-pad: 6vw;
   }
@@ -236,6 +232,7 @@ body {
   .section-program {
     display: block;
   }
+
   .program {
     width: 100%;
     max-width: 36rem;
@@ -247,9 +244,6 @@ body {
 @media (max-width: 480px) {
   html {
     font-size: 50%;
-  } /* 8px */
-  :root { 
-    --side-pad: 5vw;
   }
 
   .hero-banner {
@@ -263,9 +257,9 @@ body {
   }
 
   .hero img {
-    order: -1; /* يجعل الصورة تظهر قبل النص */
+    order: -1;
   }
- 
+
   .about-txt {
     font-size: 1.4rem;
     border-radius: 0 0 10px 10px;
@@ -275,16 +269,18 @@ body {
 
   .program {
     width: 100%;
-    max-width: none; /* تمت إزالة الحد الأقصى 36rem لملء العرض */
+    max-width: none;
   }
 
   .program-title {
     font-size: 2.1rem;
     padding: 2.2rem;
   }
+
   .sup-title {
     font-size: 2rem;
   }
+
   .program-item {
     font-size: 1.9rem;
   }
@@ -293,62 +289,84 @@ body {
     height: 12rem;
     border-radius: 6px;
   }
+
   .location-iframe {
     height: 24rem;
     margin-bottom: 1.6rem;
   }
 
-  .small-banner{
+  .small-banner {
     margin-bottom: 1.6rem;
   }
 
   .logo-txt {
     font-size: 2.8rem;
   }
+
   .address-txt {
     font-size: 1.6rem;
   }
-  .deco{
-  padding: 3.2rem 0;
-}
 
-.deco-img{
-  display: block;
-  width:100%;
-  max-width: 18rem;
+  .deco {
+    padding: 3.2rem 0;
+  }
 
-}
+  .deco-img {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-inline: 0 !important;
+  }
+
+  .Zyarah-title,
+  .zyarah-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ✅ الفراغ الجانبي لجميع الأقسام ما عدا الهيرو والفوتر */
+  body > *:not(.section-hero):not(.footer) {
+    padding-inline: 1.6rem;
+  }
 }
 
 /* === 4) ≤360px (Very Small Mobile) === */
 @media (max-width: 360px) {
   html {
     font-size: 46%;
-  } /* ≈7.4px */
-  :root {
-    --side-pad: 6vw;
-  } /* فراغ أكبر قليلاً لموبايل ضيّق */
+  }
 
   .about-txt {
     font-size: 1.8rem;
   }
-  .program-title {
-    font-size: 2.2rem;
-  }
+
+  .program-title,
   .sup-title {
     font-size: 2.2rem;
   }
+
   .program-item {
     font-size: 1.4rem;
   }
 
-
+  /* ✅ فراغ جانبي أقل قليلًا لشاشات أصغر */
+  body > *:not(.section-hero):not(.footer) {
+    padding-inline: 1.2rem;
+  }
 }
 
-/* HERO SECTION */
-/* ===========================
-   HERO SECTION
-=========================== */
+/* =========================== */
+/*       HERO SECTION          */
+/* =========================== */
 
 .section-hero {
   padding: 4.8rem 0 9.6rem;
@@ -373,7 +391,6 @@ body {
   width: 100%;
 }
 
-/* ---------- Logo ---------- */
 .header {
   margin: 0 auto 6.4rem;
   display: flex;
@@ -384,7 +401,6 @@ body {
   max-width: 20rem;
 }
 
-/* ---------- Text block ---------- */
 .Zyarah-title {
   font-size: 5.2rem;
   margin-bottom: 3.2rem;
@@ -415,11 +431,6 @@ body {
   background-color: rgb(37, 65, 25);
 }
 
-/* ===========================
-   RESPONSIVE BREAKPOINTS
-=========================== */
-
-/* أجهزة التابلت */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
@@ -445,7 +456,6 @@ body {
   }
 }
 
-/* أجهزة الموبايل */
 @media (max-width: 480px) {
   .section-hero {
     padding: 3.2rem 0 6.4rem;
@@ -480,7 +490,6 @@ body {
   }
 }
 
-/* شاشات أصغر من 360px */
 @media (max-width: 360px) {
   .Zyarah-title {
     font-size: 2.8rem;
