@@ -34,26 +34,21 @@ Paragraph default: 1.6
 
 - Accents:
 - Greys
-
 #888
-#767676 (lightest grey allowed on #fff)
-#6f6f6f (lightest grey allowed on #fdf2e9)
+#767676
+#6f6f6f
 #555
 #333
 
 --- 05 SHADOWS
-
 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 
 --- 06 BORDER-RADIUS
-
 Default: 9px
 Medium: 11px
 
 --- 07 WHITESPACE
-
-- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+Spacing system (px): 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
 * {
@@ -63,9 +58,6 @@ Medium: 11px
 }
 
 html {
-  /* font-size: 10px; */
-  /* 10px / 16px = 0.625 = 62.5% */
-  /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
 }
 
@@ -88,7 +80,6 @@ body {
 /**************************/
 
 .container {
-  /* 1140px */
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -98,13 +89,7 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
-
-  /* margin-bottom: 9.6rem; */
 }
-
-/*.grid:last-child {
-  margin-bottom: 0;
-} */
 
 .grid:not(:last-child) {
   margin-bottom: 9.6rem;
@@ -114,81 +99,35 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.container {
-  /* 1140px */
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-}
-
 /**************************/
 /* HERO SECTION  */
 /**************************/
 
-.section-hero {
-  padding: 4.8rem 0 9.6rem 0;
-  background-color: #fffff0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 5.6rem;
+.header{
+  padding: 2.8rem;
 }
 
-.hero {
-  max-width: 130rem;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9.6rem;
-  padding: 0 3.2rem;
-
-  align-items: center;
-}
-
-.section-hero img {
+.logo{
+  display: block;
   width: 100%;
-}
-
-.header {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 6.4rem;
-}
-
-.logo {
   max-width: 20rem;
+  margin: 0 auto;
 }
 
-.zyarah-desc {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
-}
 
-.btn-cta {
-  background-color: #1a2c11;
-  padding: 1.6rem 3.2rem;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  transform: scale(0.3s);
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-  font-weight: 600;
-}
 
-.btn-cta:hover {
-  background-color: rgb(37, 65, 25);
-}
-
-.Zyarah-title {
-  font-size: 5.2rem;
-  margin-bottom: 3.2rem;
-  line-height: 1.3;
-  color: #1a2c11;
+.hero-banner {
+  width: 100%;
+  max-width: 120rem;
+  height: 44rem;
+  border-radius: 15px;
+  margin:1.6rem 4.8rem 0 0 auto;
+  background-image: url("/img/banner3.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  padding-inline: 2rem;
+  margin-bottom: 3.6rem;
 }
 
 .center-text {
@@ -208,6 +147,8 @@ body {
 /**************************/
 /* FEATURES SECTION  */
 /**************************/
+
+
 
 .feature {
   display: flex;
@@ -257,9 +198,8 @@ body {
 }
 
 .card {
-  max-width: 36rem;
+  max-width: 36.4rem;
   padding: 0 0 3.6rem 0;
-  /* background-color: #fffff0; */
   border: 1px solid #d0daba;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 20px;
@@ -267,11 +207,11 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  transition: transform 0.3s ease; /* إضافة حركة سلسة */
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px); /* تحريك البطاقة 10 بكسل لأعلى */
+  transform: translateY(-10px);
 }
 
 .card-img {
@@ -308,18 +248,21 @@ body {
   justify-content: center;
   gap: 0.6rem;
   margin-bottom: 2.4rem;
+  font-size: 3.2rem;
+  color: #1a2c11;
+}
+
+.card-desc {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  padding: 0 3.2rem;
+  margin-bottom: 2.4rem;
 }
 
 .saudi-ryal {
   max-width: 2.4rem;
-
   filter: brightness(0) saturate(100%) invert(14%) sepia(45%) saturate(561%)
     hue-rotate(56deg) brightness(92%) contrast(97%);
-}
-
-.price {
-  font-size: 3.2rem;
-  color: #1a2c11;
 }
 
 .btn-whats {
@@ -340,8 +283,6 @@ body {
 
 .btn-whats img {
   max-width: 4.8rem;
-  /* filter: brightness(0) saturate(100%) invert(13%) sepia(13%) saturate(2160%)
-    hue-rotate(56deg) brightness(93%) contrast(93%); */
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
     hue-rotate(131deg) brightness(102%) contrast(101%);
 }
@@ -396,12 +337,10 @@ body {
   align-items: center;
 }
 
-.logo-txt {
-  font-size: 3.6rem;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  margin-bottom: 1.6rem;
+.logo-img {
+  width: 100%;
+  max-width: 20rem;
+  margin-bottom: 2rem;
 }
 
 .social-icons {
@@ -433,16 +372,13 @@ body {
   text-align: center;
 }
 
-/* Existing CSS remains the same until the media queries */
-
 /**************************/
 /* RESPONSIVE DESIGN */
 /**************************/
 
-/* For tablets (768px and below) */
 @media (max-width: 768px) {
   html {
-    font-size: 56.25%; /* 9px */
+    font-size: 56.25%;
   }
 
   .hero {
@@ -458,10 +394,9 @@ body {
   }
 
   .hero img {
-    order: 2;
+    order: -1;
     max-width: 80%;
     margin: 0 auto;
-    order: -1;
   }
 
   .Zyarah-title {
@@ -474,7 +409,6 @@ body {
 
   .features {
     flex-direction: column;
-
     gap: 2.4rem;
     padding: 2.4rem;
     border: none;
@@ -497,7 +431,7 @@ body {
   }
 
   .card {
-    max-width: 35rem;
+    max-width: 90%;
   }
 
   .our-work {
@@ -509,43 +443,30 @@ body {
   }
 }
 
-/* For mobile devices (480px and below) */
 @media (max-width: 480px) {
   html {
-    font-size: 50%; /* 8px */
+    font-size: 50%;
   }
 
-  .section-hero {
-    padding: 3.2rem 0 6.4rem 0;
-    margin-bottom: 0;
-  }
-
-  .hero img {
-    max-width: 70%;
-  }
-
-  .logo {
-    max-width: 16rem;
-  }
-
-  .Zyarah-title {
-    font-size: 3.2rem;
+  .hero-banner {
+    height: 25rem;
+    background-size: contain;
+    background-position: center;
+    padding-inline: 3.2rem;
     margin-bottom: 2.4rem;
-    line-height: 1.5;
-    padding: 0 3.6rem;
   }
 
-  .zyarah-desc {
-    font-size: 1.8rem;
-    line-height: 1.5;
-    margin-bottom: 5rem;
-    padding: 0 3rem;
-  }
+  .header{
+  padding: 2rem;
+}
 
-  .btn-cta {
-    padding: 2rem 3.2rem;
-    font-size: 2.4rem;
-  }
+.logo{
+  display: block;
+  width: 100%;
+  max-width: 12rem;
+  margin: 0 auto;
+}
+
 
   .title {
     font-size: 3.2rem;
@@ -576,7 +497,7 @@ body {
   }
 
   .section-features {
-    margin-bottom: 3.6rem;
+    margin-bottom: 5.6rem;
   }
 
   .gust-title {
@@ -588,9 +509,6 @@ body {
     font-size: 2.4rem;
   }
 
-  .gusts {
-    gap: 1rem;
-  }
   .gusts img {
     max-width: 3rem;
   }
@@ -623,15 +541,20 @@ body {
   .address-txt {
     font-size: 1.6rem;
   }
+
   .saudi-ryal {
     max-width: 1.8rem;
   }
 }
 
-/* For very small mobile devices (360px and below) */
 @media (max-width: 360px) {
   .Zyarah-title {
     font-size: 2.8rem;
+  }
+
+  .hero-banner {
+    height: 22rem;
+    padding-inline: 4.8rem;
   }
 
   .feature-first-row,
@@ -652,5 +575,9 @@ body {
   .first-row img:nth-child(2),
   .first-row img:nth-child(3) {
     display: none;
+  }
+
+  .card {
+    max-width: 100%;
   }
 }
