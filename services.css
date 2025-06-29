@@ -121,13 +121,13 @@ body {
   max-width: 120rem;
   height: 44rem;
   border-radius: 15px;
-  margin:1.6rem 4.8rem 0 0 auto;
   background-image: url("/img/banner3.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   padding-inline: 2rem;
   margin-bottom: 3.6rem;
+  margin-top: 0;
 }
 
 .center-text {
@@ -137,6 +137,7 @@ body {
 .section-features {
   margin-bottom: 6.4rem;
 }
+
 .title {
   text-align: center;
   font-size: 4.2rem;
@@ -325,7 +326,8 @@ body {
 /**************************/
 
 .deco{
-  padding: 3.2rem 0;
+  padding:0 3.2rem 0 0;
+  background-color:  #fffff0  ;
 }
 
 .deco-img{
@@ -461,13 +463,20 @@ body {
   html {
     font-size: 50%;
   }
+  .section-hero{
+    margin: 0;
+  }
+
+  
 
   .hero-banner {
-    height: 25rem;
+    height: 20rem;
     background-size: contain;
     background-position: center;
     padding-inline: 3.2rem;
-    margin-bottom: 2.4rem;
+    margin-bottom: 1.9rem;
+    border-radius: 0;
+
   }
 
   .header{
