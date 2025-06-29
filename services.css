@@ -320,6 +320,20 @@ body {
 .margin-bottom {
   margin-bottom: 6.4rem;
 }
+/**************************/
+/* DECO IMG  */
+/**************************/
+
+.deco{
+  padding: 3.2rem 0;
+}
+
+.deco-img{
+  display: block;
+  width:100%;
+  max-width: 30rem;
+
+}
 
 /**************************/
 /* FOOTER  */
@@ -545,6 +559,18 @@ body {
   .saudi-ryal {
     max-width: 1.8rem;
   }
+  
+  
+.deco{
+  padding: 3.2rem 0;
+}
+
+.deco-img{
+  display: block;
+  width:100%;
+  max-width: 18rem;
+
+}
 }
 
 @media (max-width: 360px) {
