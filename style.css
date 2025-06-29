@@ -12,15 +12,15 @@ html {
   font-size: 62.5%; /* 10px */
 }
 
-@font-face {
-  font-family: "Rubik";
-  src: url("/font/Rubik-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-}
+  @font-face {
+    font-family: "IBM";
+    src: url("/font/IBMPlexSansArabic-Medium.ttf") format("truetype");
+    font-weight: Medium;
+    font-style: Medium;
+  }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "IBM", sans-serif;
   font-weight: 400;
   line-height: 1;
   color: #555;
