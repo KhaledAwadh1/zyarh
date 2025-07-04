@@ -1,65 +1,16 @@
-  /*
-  --- 01 TYPOGRAPHY SYSTEM
+/* -------------------------------------------------- */
+/* 01  RESET & ROOT                                    */
+/* -------------------------------------------------- */
 
-  - Font sizes (px)
-  10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  - Font weights
-  Default: 400
-  Medium: 500
-  Semi-bold: 600
-  Bold: 700
-
-  - Line heights
-  Default: 1
-  Small: 1.05
-  Medium: 1.2
-  Paragraph default: 1.6
-
-  - Letter spacing
-  -0.5px
-  0.75px
-
-  --- 02 COLORS
-
-  - Primary: #e67e22
-  - Tints:
-  #fdf2e9
-  #fae5d3
-  #eb984e
-
-  - Shades: 
-  #cf711f
-  #45260a
-
-  - Accents:
-  - Greys
-  #888
-  #767676
-  #6f6f6f
-  #555
-  #333
-
-  --- 05 SHADOWS
-  0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-
-  --- 06 BORDER-RADIUS
-  Default: 9px
-  Medium: 11px
-
-  --- 07 WHITESPACE
-  Spacing system (px): 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-  */
-
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  html {
-    font-size: 62.5%;
-  }
+html {
+  font-size: 62.5%; /* 10px */
+}
 
   @font-face {
     font-family: "IBM";
@@ -68,557 +19,40 @@
     font-style: Medium;
   }
 
-  body {
-    font-family: "IBM", sans-serif;
-    line-height: 1;
-    font-weight: 400;
-    color: #555;
-  }
-
-  /**************************/
-  /* GENRAL REUSABLE COMPONENTS */
-  /**************************/
-
-  .container {
-    max-width: 120rem;
-    padding: 0 3.2rem;
-    margin: 0 auto;
-  }
-
-  .grid {
-    display: grid;
-    column-gap: 6.4rem;
-    row-gap: 9.6rem;
-  }
-
-  .grid:not(:last-child) {
-    margin-bottom: 9.6rem;
-  }
-
-  .grid--2-cols {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /**************************/
-  /* HERO SECTION  */
-  /**************************/
-
-  .header{
-    padding: 2.8rem;
-  }
-
-  .logo{
-    display: block;
-    width: 100%;
-    max-width: 20rem;
-    margin: 0 auto;
-  }
-
-
-
-  .hero-banner {
-    width: 100%;
-    max-width: 120rem;
-    height: 44rem;
-    border-radius: 15px;
-    background-image: url("/img/banner3.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    padding-inline: 2rem;
-    margin-bottom: 3.6rem;
-    margin-top: 0;
-  }
-
-  .center-text {
-    text-align: center;
-  }
-
-  .section-features {
-    margin-bottom: 6.4rem;
-  }
-
-  .title {
-    text-align: center;
-    font-size: 4.2rem;
-    margin-bottom: 2rem;
-    color: #1a2c11;
-  }
-
-  /**************************/
-  /* FEATURES SECTION  */
-  /**************************/
-
-
-
-  .feature {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .feature-txt {
-    font-size: 2.6rem;
-    color: #1a2c11;
-  }
-
-  .feature-icon {
-    max-width: 4rem;
-  }
-
-  .features {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.8rem;
-    padding: 1.6rem 0;
-    border-radius: 16px;
-    border: 1px solid #9ba684;
-  }
-
-  .feature-first-row,
-  .feature-second-row {
-    display: flex;
-    gap: 3.2rem;
-  }
-
-  /**************************/
-  /* CARDS SECTION */
-  /**************************/
-
-  .gust-title {
-    margin-bottom: 3.6rem;
-  }
-  .cards {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 9.6rem;
-    margin-bottom: 8.4rem;
-  }
-
-  .card {
-    max-width: 36.4rem;
-    padding: 0 0 3.6rem 0;
-    border: 1px solid #d0daba;
-    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .card:hover {
-    transform: translateY(-10px);
-  }
-
-  .card-img {
-    display: inline-block;
-    max-width: 100%;
-    margin-bottom: 2.4rem;
-  }
-
-  .gusts {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .gusts img {
-    max-width: 3.8rem;
-  }
-
-  .gust {
-    display: inline-block;
-    font-size: 3.2rem;
-    color: #1a2c11;
-    font-weight: 350;
-  }
-
-  .price {
-    padding: 1rem 3.2rem;
-    border-radius: 14px;
-    display: flex;
-    border: solid 1px #9ba684;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-bottom: 2.4rem;
-    font-size: 3.2rem;
-    color: #1a2c11;
-  }
-
-  .card-desc {
-    font-size: 1.6rem;
-    line-height: 1.6;
-    padding: 0 3.2rem;
-    margin-bottom: 2.4rem;
-  }
-
-  .saudi-ryal {
-    max-width: 2.4rem;
-    filter: brightness(0) saturate(100%) invert(14%) sepia(45%) saturate(561%)
-      hue-rotate(56deg) brightness(92%) contrast(97%);
-  }
-
-  .btn-whats {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.6rem 2.4rem;
-    background-color: #1a2c11;
-    border: none;
-    border-radius: 14px;
-    cursor: pointer;
-    gap: 0.6rem;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 2.4rem;
-    font-weight: 500;
-  }
-
-  .btn-whats img {
-    max-width: 4.8rem;
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
-      hue-rotate(131deg) brightness(102%) contrast(101%);
-  }
-
-  /**************************/
-  /* SECTION OUR WORK */
-  /**************************/
-
-  .section-our-work {
-    background-color: #fffff0;
-    padding: 3.2rem 0 0 0;
-  }
-
-  .our-work {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 0 6.4rem;
-    row-gap: 1.6rem;
-  }
-
-  .our-work img {
-    width: 100%;
-  }
-
-  .first-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
-  }
-
-  .first-row img {
-    border-radius: 10px;
-  }
-
-  .margin-bottom {
-    margin-bottom: 6.4rem;
-  }
-  /**************************/
-  /* DECO IMG  */
-  /**************************/
-
-  .deco{
-    padding:0 3.2rem 0 0;
-    background-color:  #fffff0  ;
-  }
-
-  .deco-img{
-    display: block;
-    width:100%;
-    max-width: 30rem;
-
-  }
-
-  /**************************/
-  /* FOOTER  */
-  /**************************/
-
-  .footer {
-    background-color: #1a2c11;
-    padding: 4.8rem 0 1.6rem 0;
-  }
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2.4rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo-img {
-    width: 100%;
-    max-width: 20rem;
-    margin-bottom: 2rem;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1.6rem;
-  }
-
-  .footer-icon {
-    max-width: 3.2rem;
-    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
-      hue-rotate(131deg) brightness(102%) contrast(101%);
-  }
-
-  .address {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 4.8rem;
-  }
-
-  .address-txt {
-    color: white;
-    font-size: 2rem;
-  }
-
-  .copy-right {
-    color: white;
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  /**************************/
-  /* RESPONSIVE DESIGN */
-  /**************************/
-
-  @media (max-width: 768px) {
-    html {
-      font-size: 56.25%;
-    }
-
-    .hero {
-      grid-template-columns: 1fr;
-      gap: 4.8rem;
-      flex-direction: column-reverse;
-      padding: 0 1.6rem;
-    }
-
-    .hero-txt {
-      order: 1;
-      text-align: center;
-    }
-
-    .hero img {
-      order: -1;
-      max-width: 80%;
-      margin: 0 auto;
-    }
-
-    .Zyarah-title {
-      font-size: 4.2rem;
-    }
-
-    .zyarah-desc {
-      font-size: 1.8rem;
-    }
-
-    .features {
-      flex-direction: column;
-      gap: 2.4rem;
-      padding: 2.4rem;
-      border: none;
-    }
-
-    .feature-first-row,
-    .feature-second-row {
-      gap: 2.4rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .feature-txt {
-      font-size: 2rem;
-    }
-
-    .cards {
-      flex-direction: column;
-      gap: 4.8rem;
-    }
-
-    .card {
-      max-width: 90%;
-    }
-
-    .our-work {
-      padding: 0 1.6rem;
-    }
-
-    .first-row {
-      gap: 0.8rem;
-    }
-  }
-
-  @media (max-width: 480px) {
-    html {
-      font-size: 50%;
-    }
-    .section-hero{
-      margin: 0;
-    }
-
-    
-
-    .hero-banner {
-      height: 20rem;
-      background-size: contain;
-      background-position: center;
-      padding-inline: 3.2rem;
-      margin-bottom: 1rem;
-      border-radius: 0;
-
-    }
-
-    .header{
-    padding: 2rem;
-  }
-
-  .logo{
-    display: block;
-    width: 100%;
-    max-width: 12rem;
-    margin: 0 auto;
-  }
-
-
-    .title {
-      font-size: 3.2rem;
-    }
-
-    .feature-first-row,
-    .feature-second-row {
-      gap: 1.6rem;
-    }
-
-    .features {
-      row-gap: 1.4rem;
-      padding: 3.2rem 0;
-      background-color: #faf8f8;
-      border-radius: 0;
-    }
-
-    .feature {
-      text-align: center;
-    }
-
-    .feature-txt {
-      font-size: 1.8rem;
-    }
-
-    .feature-icon {
-      max-width: 3rem;
-    }
-
-    .section-features {
-      margin-bottom: 5.6rem;
-    }
-
-    .gust-title {
-      font-size: 3.2rem;
-      margin-bottom: 4rem;
-    }
-
-    .gust {
-      font-size: 2.4rem;
-    }
-
-    .gusts img {
-      max-width: 3rem;
-    }
-
-    .price {
-      font-size: 2.4rem;
-      padding: 0.8rem 2.4rem;
-      border-radius: 10px;
-    }
-
-    .btn-whats {
-      font-size: 1.8rem;
-      padding: 0.6rem 1.8rem;
-      border-radius: 10px;
-      background-color: #9ba684;
-    }
-
-    .btn-whats img {
-      max-width: 3.2rem;
-    }
-
-    .first-row {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .logo-txt {
-      font-size: 2.8rem;
-    }
-
-    .address-txt {
-      font-size: 1.6rem;
-    }
-
-    .saudi-ryal {
-      max-width: 1.8rem;
-    }
-    
-    
-  .deco{
-    padding: 3.2rem 0;
-  }
-
-  .deco-img{
-    display: block;
-    width:100%;
-    max-width: 18rem;
-
-  }
-  }
-
-  @media (max-width: 360px) {
-    .Zyarah-title {
-      font-size: 2.8rem;
-    }
-
-    .hero-banner {
-      height: 22rem;
-      padding-inline: 4.8rem;
-    }
-
-    .feature-first-row,
-    .feature-second-row {
-      flex-direction: column;
-      gap: 1.6rem;
-      width: 100%;
-    }
-
-    .feature {
-      width: 100%;
-    }
-
-    .first-row {
-      grid-template-columns: 1fr;
-    }
-
-    .first-row img:nth-child(2),
-    .first-row img:nth-child(3) {
-      display: none;
-    }
-
-    .card {
-      max-width: 100%;
-    }
-  }
-
-  /* -------------------------------------------------- */
-/* PROGRAMS SECTION                                   */
+body {
+  font-family: "IBM", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  color: #555;
+}
+
+/* -------------------------------------------------- */
+/* 02  UTILITIES & HELPERS                            */
+/* -------------------------------------------------- */
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 3.2rem;
+}
+
+.mrgn-btm {
+  margin-bottom: 6.4rem;
+}
+.mrgn-btm2 {
+  margin-bottom: 4.8rem;
+}
+
+.grid-3-cl {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+}
+
+/* -------------------------------------------------- */
+/* 05  PROGRAMS (empp-program)                        */
 /* -------------------------------------------------- */
 
 .section-program {
@@ -677,32 +111,22 @@
     brightness(92%) contrast(94%);
 }
 
-.margin-btm-list {
-  margin-bottom: 1.6rem;
-}
-
 /* -------------------------------------------------- */
-/* BANNER SECTION                                     */
+/* 06  BANNER                                         */
 /* -------------------------------------------------- */
 
 .small-banner .banner.container {
-  padding-inline: 3.2rem;
+  padding-inline: 3.2rem; /* نفس padding المحتوى */
   max-width: 120rem;
   margin: 0 auto 8.4rem;
   border-radius: 20px;
   background: url("/img/banner two.png") center/cover no-repeat;
   box-sizing: border-box;
-  height: 20rem; /* Added for proper banner display */
 }
 
 /* -------------------------------------------------- */
-/* MAP/LOCATION SECTION                               */
+/* 07  MAP                                            */
 /* -------------------------------------------------- */
-
-.location.container {
-  padding: 0 3.2rem;
-  margin-bottom: 8.4rem;
-}
 
 .location-iframe {
   display: block;
@@ -714,33 +138,97 @@
   margin-inline: auto;
 }
 
-/* -------------------------------------------------- */
-/* DECORATION IMAGE SECTION                           */
-/* -------------------------------------------------- */
+/**************************/
+/* DECO IMG  */
+/**************************/
 
 .deco {
   padding: 3.2rem 0;
-  text-align: center;
 }
 
 .deco-img {
   display: block;
   width: 100%;
   max-width: 30rem;
-  margin: 0 auto;
 }
 
 /* -------------------------------------------------- */
-/* RESPONSIVE MEDIA QUERIES                           */
+/* 08  FOOTER                                         */
+/* -------------------------------------------------- */
+
+.footer {
+  background-color: #1a2c11;
+  padding: 4.8rem 0 1.6rem;
+  margin-inline: calc(-1 * var(--side-pad));
+  padding-inline: var(--side-pad);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 30rem;
+  margin-bottom: 2rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.footer-icon {
+  max-width: 3.2rem;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(2%)
+    hue-rotate(131deg) brightness(102%) contrast(101%);
+}
+
+.address {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4.8rem;
+}
+
+.address-txt {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.copy-right {
+  font-size: 1.4rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* -------------------------------------------------- */
+/* 09  RESPONSIVE MEDIA QUERIES                       */
 /* -------------------------------------------------- */
 
 @media (max-width: 1024px) {
+  html {
+    font-size: 56.25%;
+  }
+  :root {
+    --side-pad: 5vw;
+  }
   .section-program {
     gap: 2.4rem;
   }
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 53%;
+  }
+  :root {
+    --side-pad: 6vw;
+  }
+
   .section-program {
     display: block;
   }
@@ -750,27 +238,47 @@
     max-width: 36rem;
     margin: 0 auto 3.2rem;
   }
-  
-  .small-banner .banner.container {
-    height: 16rem;
-    margin-bottom: 6.4rem;
-  }
-  
-  .location-iframe {
-    height: 35rem;
-  }
 }
 
+/* === 3) ≤480px (Mobile) === */
 @media (max-width: 480px) {
-  .section-program, .small-banner {
+  html {
+    font-size: 50%;
+  }
+
+
+  .hero-banner {
+    height: 16rem;
+    border-radius: 10px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero img {
+    order: -1;
+  }
+
+  .about-txt {
+    font-size: 1.4rem;
+    border-radius: 0 0 10px 10px;
+    border: 0;
+    padding: 1.6rem;
+  }
+
+   .section-program ,.small-banner{
     padding-inline: 3.2rem;
   }
-  
-  .small-banner .banner.container {
-    margin-bottom: 4.8rem !important;
-    border-radius: 12px !important;
-    height: 12rem;
+  .small-banner{
+    margin-bottom: 1.2rem !important;
   }
+
+  .banner{
+    border-radius: 12px !important;
+  }
+
 
   .program {
     width: 100%;
@@ -790,25 +298,61 @@
     font-size: 1.9rem;
   }
 
-  .location.container {
-    padding-inline: 3.2rem;
-    margin-bottom: 4.8rem;
+  .banner {
+    height: 12rem;
+    border-radius: 6px;
   }
-  
+
   .location-iframe {
     height: 24rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .small-banner {
+    margin-bottom: 1.6rem;
+  }
+
+  .logo-txt {
+    font-size: 2.8rem;
+  }
+
+  .address-txt {
+    font-size: 1.6rem;
   }
 
   .deco {
-    padding: 2.4rem 0;
+    padding: 3.2rem 0;
   }
 
   .deco-img {
-    max-width: 36rem;
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .Zyarah-title,
+  .zyarah-desc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
+/* === 4) ≤360px (Very Small Mobile) === */
 @media (max-width: 360px) {
+  html {
+    font-size: 46%;
+  }
+
+  .about-txt {
+    font-size: 1.8rem;
+  }
+
   .program-title,
   .sup-title {
     font-size: 2.2rem;
@@ -817,12 +361,150 @@
   .program-item {
     font-size: 1.4rem;
   }
-  
-  .small-banner .banner.container {
-    height: 10rem;
+
+}
+
+/* =========================== */
+/*       HERO SECTION          */
+/* =========================== */
+
+.section-hero {
+  padding-top: 4.8rem;
+  padding-bottom: 9.6rem;
+  padding-inline: 0; /* ازالة البادنج الجانبي بالكامل */
+  background-color: #fffff0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 5.6rem;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  padding-inline: 3.2rem; /* بادنج داخلي من الهيرو */
+  align-items: center;
+}
+
+.section-hero img {
+  width: 100%;
+}
+
+.header {
+  margin: 0 auto 6.4rem;
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  max-width: 20rem;
+}
+
+.Zyarah-title {
+  font-size: 5.2rem;
+  margin-bottom: 3.2rem;
+  line-height: 1.3;
+  color: #1a2c11;
+}
+
+.zyarah-desc {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.btn-cta {
+  background-color: #1a2c11;
+  padding: 1.6rem 3.2rem;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: rgb(37, 65, 25);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+    padding-inline: 1.6rem;
   }
+
+  .hero-txt {
+    text-align: center;
+  }
+
+  .hero img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .Zyarah-title {
+    font-size: 4.2rem;
+  }
+
+  .zyarah-desc {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
   
-  .location-iframe {
-    height: 20rem;
+  .section-hero {
+   
+    padding-inline: 0 !important;
+    padding: 0  ;
+    margin: 0;
+    padding-top: 3.2rem;
+    padding-bottom: 9.6rem;
+  }
+
+  .hero img {
+    max-width: 70%;
+  }
+
+  .logo {
+    max-width: 16rem;
+  }
+
+  .Zyarah-title {
+    font-size: 3.2rem;
+    margin-bottom: 2.4rem;
+    line-height: 1.5;
+    padding-inline: 3.6rem;
+  }
+
+  .zyarah-desc {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 5rem;
+    padding-inline: 3rem;
+  }
+
+  .btn-cta {
+    padding:1.5rem 3rem;
+    font-size: 2.1rem;
+
+  }
+  .small-banner{
+    border-radius: 2px;
+  }
+
+
+}
+
+@media (max-width: 360px) {
+  .Zyarah-title {
+    font-size: 2.8rem;
   }
 }
