@@ -309,7 +309,7 @@ body {
   flex-direction: column-reverse;
 }
   .hero img {
-    max-width: 85%;
+    max-width: 75%;
   }
 
   .logo {
