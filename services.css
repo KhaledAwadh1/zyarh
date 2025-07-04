@@ -628,6 +628,7 @@
   display: flex;
   justify-content: space-between;
   gap: 3.2rem;
+  margin-bottom: 6.4rem;
 }
 
 .program {
@@ -726,7 +727,7 @@
 .deco-img {
   display: block;
   width: 100%;
-  max-width: 30rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
@@ -801,10 +802,11 @@
 
   .deco {
     padding: 2.4rem 0;
-    background-color: white;
+    background-color: white !important;
   }
 
   .deco-img {
+    background-color: #fff;
     max-width: 36rem;
   }
 }
