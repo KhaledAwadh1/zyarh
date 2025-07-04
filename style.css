@@ -12,12 +12,12 @@ html {
   font-size: 62.5%; /* 10px */
 }
 
-  @font-face {
-    font-family: "IBM";
-    src: url("/font/IBMPlexSansArabic-Medium.ttf") format("truetype");
-    font-weight: Medium;
-    font-style: Medium;
-  }
+@font-face {
+  font-family: "IBM";
+  src: url("/font/IBMPlexSansArabic-Medium.ttf") format("truetype");
+  font-weight: Medium;
+  font-style: Medium;
+}
 
 body {
   font-family: "IBM", sans-serif;
@@ -38,17 +38,8 @@ body {
   padding: 3.2rem;
 }
 
-.mrgn-btm {
-  margin-bottom: 6.4rem;
-}
 .mrgn-btm2 {
   margin-bottom: 4.8rem;
-}
-
-.grid-3-cl {
-  display: grid;
-  gap: 3.2rem;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 
 /* -------------------------------------------------- */
@@ -116,7 +107,7 @@ body {
 /* -------------------------------------------------- */
 
 .small-banner .banner.container {
-  padding-inline: 3.2rem; /* نفس padding المحتوى */
+  padding-inline: 3.2rem;
   max-width: 120rem;
   margin: 0 auto 8.4rem;
   border-radius: 20px;
@@ -138,20 +129,6 @@ body {
   margin-inline: auto;
 }
 
-/**************************/
-/* DECO IMG  */
-/**************************/
-
-.deco {
-  padding: 3.2rem 0;
-}
-
-.deco-img {
-  display: block;
-  width: 100%;
-  max-width: 30rem;
-}
-
 /* -------------------------------------------------- */
 /* 08  FOOTER                                         */
 /* -------------------------------------------------- */
@@ -159,8 +136,6 @@ body {
 .footer {
   background-color: #1a2c11;
   padding: 4.8rem 0 1.6rem;
-  margin-inline: calc(-1 * var(--side-pad));
-  padding-inline: var(--side-pad);
 }
 
 .footer-content {
@@ -205,165 +180,6 @@ body {
   text-align: center;
 }
 
-/* -------------------------------------------------- */
-/* 09  RESPONSIVE MEDIA QUERIES                       */
-/* -------------------------------------------------- */
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 56.25%;
-  }
-  :root {
-    --side-pad: 5vw;
-  }
-  .section-program {
-    gap: 2.4rem;
-  }
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 53%;
-  }
-  :root {
-    --side-pad: 6vw;
-  }
-
-  .section-program {
-    display: block;
-  }
-
-  .program {
-    width: 100%;
-    max-width: 36rem;
-    margin: 0 auto 3.2rem;
-  }
-}
-
-/* === 3) ≤480px (Mobile) === */
-@media (max-width: 480px) {
-  html {
-    font-size: 50%;
-  }
-
-
-  .hero-banner {
-    height: 16rem;
-    border-radius: 10px;
-  }
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .hero img {
-    order: -1;
-  }
-
-  .about-txt {
-    font-size: 1.4rem;
-    border-radius: 0 0 10px 10px;
-    border: 0;
-    padding: 1.6rem;
-  }
-
-   .section-program ,.small-banner{
-    padding-inline: 3.2rem;
-  }
-  .small-banner{
-    margin-bottom: 1.2rem !important;
-  }
-
-  .banner{
-    border-radius: 12px !important;
-  }
-
-
-  .program {
-    width: 100%;
-    max-width: none;
-  }
-
-  .program-title {
-    font-size: 2.1rem;
-    padding: 2.2rem;
-  }
-
-  .sup-title {
-    font-size: 2rem;
-  }
-
-  .program-item {
-    font-size: 1.9rem;
-  }
-
-  .banner {
-    height: 12rem;
-    border-radius: 6px;
-  }
-
-  .location-iframe {
-    height: 24rem;
-    margin-bottom: 1.6rem;
-  }
-
-  .small-banner {
-    margin-bottom: 1.6rem;
-  }
-
-  .logo-txt {
-    font-size: 2.8rem;
-  }
-
-  .address-txt {
-    font-size: 1.6rem;
-  }
-
-  .deco {
-    padding: 3.2rem 0;
-  }
-
-  .deco-img {
-    width: 100%;
-    max-width: 18rem;
-  }
-
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  .Zyarah-title,
-  .zyarah-desc {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-
-/* === 4) ≤360px (Very Small Mobile) === */
-@media (max-width: 360px) {
-  html {
-    font-size: 46%;
-  }
-
-  .about-txt {
-    font-size: 1.8rem;
-  }
-
-  .program-title,
-  .sup-title {
-    font-size: 2.2rem;
-  }
-
-  .program-item {
-    font-size: 1.4rem;
-  }
-
-}
-
 /* =========================== */
 /*       HERO SECTION          */
 /* =========================== */
@@ -371,7 +187,7 @@ body {
 .section-hero {
   padding-top: 4.8rem;
   padding-bottom: 9.6rem;
-  padding-inline: 0; /* ازالة البادنج الجانبي بالكامل */
+  padding-inline: 0;
   background-color: #fffff0;
   background-size: cover;
   background-position: center;
@@ -385,7 +201,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9.6rem;
-  padding-inline: 3.2rem; /* بادنج داخلي من الهيرو */
+  padding-inline: 3.2rem;
   align-items: center;
 }
 
@@ -433,7 +249,15 @@ body {
   background-color: rgb(37, 65, 25);
 }
 
+/* -------------------------------------------------- */
+/* 09  RESPONSIVE MEDIA QUERIES                       */
+/* -------------------------------------------------- */
+
 @media (max-width: 768px) {
+  html {
+    font-size: 56.25%;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     gap: 4.8rem;
@@ -456,14 +280,26 @@ body {
   .zyarah-desc {
     font-size: 1.8rem;
   }
+
+  .section-program {
+    display: block;
+  }
+
+  .program {
+    width: 100%;
+    max-width: 36rem;
+    margin: 0 auto 3.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  
+  html {
+    font-size: 50%;
+  }
+
   .section-hero {
-   
     padding-inline: 0 !important;
-    padding: 0  ;
+    padding: 0;
     margin: 0;
     padding-top: 3.2rem;
     padding-bottom: 9.6rem;
@@ -492,19 +328,60 @@ body {
   }
 
   .btn-cta {
-    padding:1.5rem 3rem;
+    padding: 1rem 3rem;
     font-size: 2.1rem;
-
-  }
-  .small-banner{
-    border-radius: 2px;
   }
 
+  .small-banner {
+    border-radius: 1px;
+  }
 
+  .section-program, .small-banner {
+    padding-inline: 3.2rem;
+  }
+
+  .program {
+    width: 100%;
+    max-width: none;
+  }
+
+  .program-title {
+    font-size: 2.1rem;
+    padding: 2.2rem;
+  }
+
+  .sup-title {
+    font-size: 2rem;
+  }
+
+  .program-item {
+    font-size: 1.9rem;
+  }
+
+  .location-iframe {
+    height: 24rem;
+  }
+
+  .address-txt {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 360px) {
+  html {
+    font-size: 46%;
+  }
+
   .Zyarah-title {
     font-size: 2.8rem;
+  }
+
+  .program-title,
+  .sup-title {
+    font-size: 2.2rem;
+  }
+
+  .program-item {
+    font-size: 1.4rem;
   }
 }
