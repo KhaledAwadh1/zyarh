@@ -705,6 +705,12 @@
   margin-bottom: 8.4rem;
 }
 
+.location-title{
+  margin-bottom: 1.6rem;
+  text-align: center;
+  font-size: 3.2rem;
+}
+
 .location-iframe {
   display: block;
   width: 100%;
