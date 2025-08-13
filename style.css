@@ -8,22 +8,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --side-pad: 4vw; /* فراغ جانبي افتراضي (يُحدّث بالـMQ) */
+}
+
 html {
   font-size: 62.5%; /* 10px */
+  scroll-behavior: smooth;
 }
 
 @font-face {
-  font-family: "IBM";
-  src: url("/font/IBMPlexSansArabic-Medium.ttf") format("truetype");
-  font-weight: Medium;
-  font-style: Medium;
+  font-family: "Rubik";
+  src: url("/font/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
 body {
-  font-family: "IBM", sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   line-height: 1;
   color: #555;
+  padding-inline: var(--side-pad); /* حشوة جانبية لكل المحتوى */
+  background-color: #fffff0;
 }
 
 /* -------------------------------------------------- */
@@ -31,15 +38,24 @@ body {
 /* -------------------------------------------------- */
 
 .container {
-  display: block;
   width: 100%;
   max-width: 120rem;
-  margin: 0 auto;
-  padding: 3.2rem;
+  margin-inline: auto;
+  padding-inline: 3.2rem;
 }
 
+.mrgn-btm {
+  margin-bottom: 6.4rem;
+}
 .mrgn-btm2 {
   margin-bottom: 4.8rem;
+}
+
+/* Grid بثلاثة أعمدة يتكيّف أوتوماتيكياً */
+.grid-3-cl {
+  display: grid;
+  gap: 3.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 }
 
 /* -------------------------------------------------- */
@@ -66,7 +82,7 @@ body {
 .program-title {
   text-align: center;
   font-size: 2.8rem;
-  background-color: #9ba684;
+  background-color: #1a2c11;
   color: #fff;
   padding: 1.6rem;
   border-radius: 10px;
@@ -76,7 +92,7 @@ body {
 .sup-title {
   text-align: right;
   font-size: 2.8rem;
-  color: #1a2c11;
+  color: #9ba684;
   font-weight: 600;
   margin-bottom: 1.6rem;
 }
@@ -106,13 +122,13 @@ body {
 /* 06  BANNER                                         */
 /* -------------------------------------------------- */
 
-.small-banner .banner.container {
-  padding-inline: 3.2rem;
+.banner {
+  width: 100%;
   max-width: 120rem;
+  height: 23rem;
   margin: 0 auto 8.4rem;
   border-radius: 20px;
   background: url("/img/banner two.png") center/cover no-repeat;
-  box-sizing: border-box;
 }
 
 /* -------------------------------------------------- */
@@ -125,7 +141,6 @@ body {
   max-width: 120rem;
   height: 40rem;
   border-radius: 15px;
-  border: none;
   margin-inline: auto;
 }
 
@@ -136,6 +151,9 @@ body {
 .footer {
   background-color: #1a2c11;
   padding: 4.8rem 0 1.6rem;
+  /* تمديد الخلفية لكامل العرض بإلغاء حشوة body */
+  margin-inline: calc(-1 * var(--side-pad));
+  padding-inline: var(--side-pad); /* استعادة حشوة داخلية للمحتوى */
 }
 
 .footer-content {
@@ -150,7 +168,6 @@ body {
   max-width: 30rem;
   margin-bottom: 2rem;
 }
-
 .social-icons {
   display: flex;
   gap: 1.6rem;
@@ -168,31 +185,143 @@ body {
   align-items: center;
   margin-bottom: 4.8rem;
 }
-
 .address-txt {
   font-size: 2rem;
   color: #fff;
 }
-
 .copy-right {
   font-size: 1.4rem;
   color: #fff;
   text-align: center;
 }
 
-/* =========================== */
-/*       HERO SECTION          */
-/* =========================== */
+/* -------------------------------------------------- */
+/* 09  RESPONSIVE MEDIA QUERIES                       */
+/* -------------------------------------------------- */
+
+/* === 1) ≤1024px (Laptop/Tablet Large) === */
+@media (max-width: 1024px) {
+  html {
+    font-size: 56.25%;
+  } /* 9px */
+  :root {
+    --side-pad: 5vw;
+  } /* تحديث الفراغ الجانبي */
+  .section-program {
+    gap: 2.4rem;
+  }
+  .header{
+    margin-bottom: 4.8rem;
+  }
+}
+
+/* === 2) ≤768px (Tablet) === */
+@media (max-width: 768px) {
+  html {
+    font-size: 53%;
+  } /* ≈8.5px */
+  :root {
+    --side-pad: 6vw;
+  }
+
+  .section-program {
+    display: block;
+  }
+  .program {
+    width: 100%;
+    max-width: 36rem;
+    margin: 0 auto 3.2rem;
+  }
+}
+
+/* === 3) ≤480px (Mobile) === */
+@media (max-width: 480px) {
+  html {
+    font-size: 50%;
+  } /* 8px */
+  :root {
+    --side-pad: 5vw;
+  }
+
+  .hero-banner {
+    height: 16rem;
+    border-radius: 10px;
+  }
+
+  .about-txt {
+    font-size: 1.4rem;
+    border-radius: 0 0 10px 10px;
+    border: 0;
+    padding: 1.6rem;
+  }
+
+  .program {
+    width: 100%;
+    max-width: none; /* تمت إزالة الحد الأقصى 36rem لملء العرض */
+  }
+
+  .program-title {
+    font-size: 2.1rem;
+    padding: 2.2rem;
+  }
+  .sup-title {
+    font-size: 1.9rem;
+  }
+  .program-item {
+    font-size: 1.6rem;
+  }
+
+  .banner {
+    height: 12rem;
+    border-radius: 6px;
+  }
+  .location-iframe {
+    height: 24rem;
+  }
+
+  .logo-txt {
+    font-size: 2.8rem;
+  }
+  .address-txt {
+    font-size: 1.6rem;
+  }
+}
+
+/* === 4) ≤360px (Very Small Mobile) === */
+@media (max-width: 360px) {
+  html {
+    font-size: 46%;
+  } /* ≈7.4px */
+  :root {
+    --side-pad: 6vw;
+  } /* فراغ أكبر قليلاً لموبايل ضيّق */
+
+  .about-txt {
+    font-size: 1.8rem;
+  }
+  .program-title {
+    font-size: 2.2rem;
+  }
+  .sup-title {
+    font-size: 2.2rem;
+  }
+  .program-item {
+    font-size: 1.4rem;
+  }
+}
+
+/* HERO SECTION */
+/* ===========================
+   HERO SECTION
+=========================== */
 
 .section-hero {
-  padding-top: 4.8rem;
-  padding-bottom: 9.6rem;
-  padding-inline: 0;
+  padding: 4.8rem 0 9.6rem;
   background-color: #fffff0;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 5.6rem;
+  margin-bottom: 4.8rem;
 }
 
 .hero {
@@ -201,7 +330,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9.6rem;
-  padding-inline: 3.2rem;
+  padding: 0 3.2rem;
   align-items: center;
 }
 
@@ -209,8 +338,9 @@ body {
   width: 100%;
 }
 
+/* ---------- Logo ---------- */
 .header {
-  margin: 0 auto 6.4rem;
+  margin: 0 auto 4.8rem;
   display: flex;
   justify-content: center;
 }
@@ -219,6 +349,18 @@ body {
   max-width: 20rem;
 }
 
+.hero img {
+    max-width: 90%;
+    display: block;
+  }
+
+  .img-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+  }
+
+/* ---------- Text block ---------- */
 .Zyarah-title {
   font-size: 5.2rem;
   margin-bottom: 3.2rem;
@@ -249,19 +391,16 @@ body {
   background-color: rgb(37, 65, 25);
 }
 
-/* -------------------------------------------------- */
-/* 09  RESPONSIVE MEDIA QUERIES                       */
-/* -------------------------------------------------- */
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+=========================== */
 
+/* أجهزة التابلت */
 @media (max-width: 768px) {
-  html {
-    font-size: 56.25%;
-  }
-
   .hero {
     grid-template-columns: 1fr;
     gap: 4.8rem;
-    padding-inline: 1.6rem;
+    padding: 0 1.6rem;
   }
 
   .hero-txt {
@@ -269,7 +408,7 @@ body {
   }
 
   .hero img {
-    max-width:75%;
+    max-width: 80%;
     margin: 0 auto;
   }
 
@@ -280,36 +419,21 @@ body {
   .zyarah-desc {
     font-size: 1.8rem;
   }
-
-  .section-program {
-    display: block;
-  }
-
-  .program {
-    width: 100%;
-    max-width: 36rem;
-    margin: 0 auto 3.2rem;
+  .hero{
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
+/* أجهزة الموبايل */
 @media (max-width: 480px) {
-  html {
-    font-size: 50%;
+  .section-hero {
+    padding: 3.2rem 0 6.4rem;
+    margin-bottom: 3.2rem;
   }
 
-  .section-hero {
-    padding-inline: 0 !important;
-    padding: 0;
-    margin: 0;
-    padding-top: 3.2rem;
-    padding-bottom: 9.6rem;
-  }
-.hero{
-  display: flex;
-  flex-direction: column-reverse;
-}
   .hero img {
-    max-width: 80%;
+    max-width: 70%;
   }
 
   .logo {
@@ -320,71 +444,29 @@ body {
     font-size: 3.2rem;
     margin-bottom: 2.4rem;
     line-height: 1.5;
-    padding-inline: 3.6rem;
+    padding: 0 3.6rem;
   }
 
   .zyarah-desc {
     font-size: 1.8rem;
     line-height: 1.5;
     margin-bottom: 5rem;
-    padding-inline: 3rem;
+    padding: 0 3rem;
   }
 
   .btn-cta {
-    padding:1.3rem 3rem;
+    padding: 1.6rem 2.4rem;
     font-size: 2.1rem;
   }
-
-  .small-banner {
-    border-radius: 1px;
-  }
-
-  .section-program, .small-banner {
-    padding-inline: 3.2rem;
-  }
-
-  .program {
-    width: 100%;
-    max-width: none;
-  }
-
-  .program-title {
-    font-size: 2.1rem;
-    padding: 2.2rem;
-  }
-
-  .sup-title {
-    font-size: 2rem;
-  }
-
-  .program-item {
-    font-size: 1.9rem;
-  }
-
-  .location-iframe {
-    height: 24rem;
-  }
-
-  .address-txt {
-    font-size: 1.6rem;
+  .hero{
+    display: flex;
+    flex-direction: column-reverse;
   }
 }
 
+/* شاشات أصغر من 360px */
 @media (max-width: 360px) {
-  html {
-    font-size: 46%;
-  }
-
   .Zyarah-title {
     font-size: 2.8rem;
-  }
-
-  .program-title,
-  .sup-title {
-    font-size: 2.2rem;
-  }
-
-  .program-item {
-    font-size: 1.4rem;
   }
 }
