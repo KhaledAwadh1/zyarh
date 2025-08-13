@@ -708,7 +708,8 @@
 .location-title{
   margin-bottom: 1.6rem;
   text-align: center;
-  font-size: 3.2rem;
+  font-size: 28rem;
+  color: #1a2c11;
 }
 
 .location-iframe {
@@ -770,8 +771,9 @@
 
 @media (max-width: 480px) {
   .section-program, .small-banner {
-    padding-inline: 3.2rem;
+    padding-inline: 0rem;
   }
+
   
   .small-banner .banner.container {
     margin-bottom: 4.8rem !important;
@@ -809,7 +811,6 @@
   .deco {
     padding: 2.4rem 0;
   }
-
   .deco-img {
     max-width: 30rem;
   }
@@ -833,5 +834,3 @@
     height: 20rem;
   }
 }
-
-
