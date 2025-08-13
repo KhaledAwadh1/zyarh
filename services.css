@@ -808,11 +808,9 @@
 
   .deco {
     padding: 2.4rem 0;
-    background-color: white !important;
   }
 
   .deco-img {
-    background-color: #fff;
     max-width: 36rem;
   }
 }
@@ -835,3 +833,4 @@
     height: 20rem;
   }
 }
+
